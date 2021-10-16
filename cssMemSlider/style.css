@@ -1,18 +1,123 @@
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html {
-  font-size: 14px;
+  font-size: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .slider-wrapper {
-  margin: 0 auto;
-  width: 500px;
+  margin: 60px auto;
+  width: 800px;
   max-width: 100%;
+}
+
+.inputs { 
+   display: none;
+}
+
+.slider-wrapper label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.slider-wrapper label::before {
+    content: "";
+    cursor: pointer;
+    padding: 1.5em;
+  }
+
+.slides {
+  padding: 10px;
+  border: 3px solid #330955;
+  background: #ceb7e0;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+}
+
+.overflow-slides {
+  width: calc(100% * 4);
+  height: 100%;
+  display: flex;
+  transition: 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  line-height: 0;
+  margin-left: 0;
+}
+
+.overflow-slides img {
+  width: calc(100% / 4);
+  height: 100%;
+  object-fit: cover;
+  margin: 10px;
+}
+
+#slide1:checked ~ .slides .overflow-slides,
+#slide1:checked ~ .text-content .text-for-slides.overflow-text {
+   margin-left: 0;
+}
+
+#slide2:checked ~ .slides .overflow-slides,
+#slide2:checked ~ .text-content .text-for-slides .overflow-text  {
+   margin-left: -100%;
+}
+
+#slide3:checked ~ .slides .overflow-slides,
+#slide3:checked ~ .text-content .text-for-slides .overflow-text  {
+   margin-left: -200%;
+}
+
+#slide4:checked ~ .slides .overflow-slides,
+#slide4:checked ~ .text-content .text-for-slides .overflow-text  {
+   margin-left: -300%;
+}
+
+.control-bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 10px;
+}
+
+.control-bullets label:hover {
+    background: red;
+    
+ }
+
+#slide1:checked ~ .text-content .control-bullets label:nth-child(1),
+#slide2:checked ~ .text-content .control-bullets label:nth-child(2),
+#slide3:checked ~ .text-content .control-bullets label:nth-child(3),
+#slide4:checked ~ .text-content .control-bullets label:nth-child(4) {
+   background: #444;
+}
+
+.text-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0;
+  height: 50px;
+}
+
+.text-for-slides {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.overflow-text {
+  width: calc(100% * 4);
+  height: 100%;
+  display: flex;
+  transition: 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  line-height: 0;
+  margin-left: 0;
+}
+
+.overflow-text p {
+  color:#000000;
+  font-size: 1.4rem;
+  width: calc(100% / 4);
+  line-height: 18px;
 }
