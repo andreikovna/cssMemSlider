@@ -55,6 +55,7 @@ body {
 
 .slider-wrapper label:hover {
     background:red;
+  border:1px solid red;
 }
 
 .slider-wrapper label:active {
