@@ -5,9 +5,35 @@ html {
 
 
 .slider-wrapper {
-  margin: 60px auto;
+  margin: 60px auto 20px auto;
   width: 800px;
   max-width: 100%;
+}
+
+.about-me {
+    margin: 60px auto;
+    width: 800px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-me p {
+    font-size: 1.4em;
+}
+
+.about-me a {
+    font-size: 1.4em;
+    text-decoration: none;
+}
+
+.about-me a:hover {
+    color: red;
+}
+
+.about-me a img{
+    width: 1em;
 }
 
 .inputs { 
@@ -32,7 +58,7 @@ html {
   border-radius: 10px;
   width: 100%;
   overflow: hidden;
-  height: 400px;
+  height: 450px;
 }
 
 .overflow-slides {
@@ -48,7 +74,7 @@ html {
   width: calc(100% / 4);
   height: 100%;
   object-fit: cover;
-  margin: 10px;
+  margin: 0px 10px;
 }
 
 #slide1:checked ~ .slides .overflow-slides,
